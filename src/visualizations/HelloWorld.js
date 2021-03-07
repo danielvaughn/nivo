@@ -1,3 +1,7 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
+import Bar from './Bar'
+
 looker.plugins.visualizations.add({
   options: {
     font_size: {
@@ -10,30 +14,35 @@ looker.plugins.visualizations.add({
   },
 
   create: function (element, config) {
-    const css = (element.innerHTML = `
-      <style>
-        .hello-world-vis {
-          height: 100%;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-          text-align: center;
-        }
-        .hello-world-text-large {
-          font-size: 72px;
-          color: orange;
-        }
-        .hello-world-text-small {
-          font-size: 18px;
-          color: purple;
-        }
-      </style>
-    `)
+    // const css = (element.innerHTML = `
+    //   <style>
+    //     .hello-world-vis {
+    //       height: 100%;
+    //       display: flex;
+    //       flex-direction: column;
+    //       justify-content: center;
+    //       text-align: center;
+    //     }
+    //     .hello-world-text-large {
+    //       font-size: 72px;
+    //       color: orange;
+    //     }
+    //     .hello-world-text-small {
+    //       font-size: 18px;
+    //       color: purple;
+    //     }
+    //   </style>
+    // `)
 
-    const container = element.appendChild(document.createElement('div'))
-    container.className = 'hello-world-vis'
+    // const container = element.appendChild(document.createElement('div'))
+    // container.className = 'hello-world-vis'
 
-    this._textElement = container.appendChild(document.createElement('div'))
+    // this._textElement = container.appendChild(document.createElement('div'))
+
+    const viz = element.appendChild(document.createElement('div'))
+    ReactDOM.render(<Bar />, viz)
+
+    this._textElement = viz
   },
 
   updateAsync: function (data, element, config, queryResponse, details, done) {
@@ -44,16 +53,19 @@ looker.plugins.visualizations.add({
       return
     }
 
-    const firstRow = data[0]
-    const firstCell = firstRow[queryResponse.fields.dimensions[0].name]
+    // Let's see if this works?
+    ReactDOM.render(<Bar />, this._textElement)
 
-    this._textElement.innerHTML = LookerCharts.Utils.htmlForCell(firstCell)
+    // const firstRow = data[0]
+    // const firstCell = firstRow[queryResponse.fields.dimensions[0].name]
 
-    if (config.font_size === 'small') {
-      this._textElement.className = 'hello-world-text-small'
-    } else {
-      this._textElement.className = 'hello-world-text-large'
-    }
+    // this._textElement.innerHTML = LookerCharts.Utils.htmlForCell(firstCell)
+
+    // if (config.font_size === 'small') {
+    //   this._textElement.className = 'hello-world-text-small'
+    // } else {
+    //   this._textElement.className = 'hello-world-text-large'
+    // }
 
     done()
   },
