@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Bar from './Bar'
+import Bar from '../components/Bar'
 
 looker.plugins.visualizations.add({
   options: {
@@ -40,6 +40,10 @@ looker.plugins.visualizations.add({
     // this._textElement = container.appendChild(document.createElement('div'))
 
     const viz = element.appendChild(document.createElement('div'))
+
+    viz.style.height = '100vh'
+    viz.style.width = '100vw'
+
     ReactDOM.render(<Bar />, viz)
 
     this._textElement = viz
