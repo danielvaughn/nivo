@@ -1,6 +1,8 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
-import App from './components/App'
+import './visualizations/HelloWorld'
 
-const app = document.getElementById('app')
-ReactDOM.render(<App />, app)
+// import React from 'react'
+// import ReactDOM from 'react-dom'
+// import App from './components/App'
+
+// const app = document.getElementById('app')
+// ReactDOM.render(<App />, app)
