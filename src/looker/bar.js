@@ -45,14 +45,10 @@ looker.plugins.visualizations.add({
 
     // this._textElement = container.appendChild(document.createElement('div'))
 
-    const viz = element.appendChild(document.createElement('div'))
+    element.style.height = '100%'
+    element.style.width = '100%'
 
-    viz.style.height = '100vh'
-    viz.style.width = '100vw'
-
-    ReactDOM.render(<Bar />, viz)
-
-    this._textElement = viz
+    ReactDOM.render(<Bar data={[]} keys={[]} indexBy={null} />, element)
   },
 
   updateAsync: function (data, element, config, queryResponse, details, done) {
@@ -63,8 +59,12 @@ looker.plugins.visualizations.add({
       return
     }
 
+    console.log('RECEIVING UPDATE')
+    console.log(data)
+    console.log(queryResponse)
+
     // Let's see if this works?
-    ReactDOM.render(<Bar />, this._textElement)
+    ReactDOM.render(<Bar data={data} dimension="" metrics={[]} />, element)
 
     // const firstRow = data[0]
     // const firstCell = firstRow[queryResponse.fields.dimensions[0].name]
