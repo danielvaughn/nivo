@@ -11,6 +11,12 @@ looker.plugins.visualizations.add({
       display: 'radio',
       default: 'small',
     },
+    sum_num: {
+      type: 'number',
+      label: 'Sum Num',
+      default: 0,
+      display: 'number',
+    },
   },
 
   create: function (element, config) {
