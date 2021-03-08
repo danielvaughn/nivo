@@ -72,7 +72,7 @@ looker.plugins.visualizations.add({
     const metrics = queryResponse.fields.measures.map((m) => m.name)
 
     console.log('DIMENSIONS')
-    console.log(dimensions)
+    console.log(dimension)
     console.log(metrics)
 
     // Let's see if this works?
