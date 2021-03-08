@@ -54,8 +54,13 @@ looker.plugins.visualizations.add({
   updateAsync: function (data, element, config, queryResponse, details, done) {
     this.clearErrors()
 
-    if (queryResponse.fields.dimensions.length == 0) {
-      this.addError({ title: 'No Dimensions', message: 'This chart requires dimensions' })
+    if (queryResponse.fields.dimensions.length !== 1) {
+      this.addError({ title: 'Invalid Dimensions', message: 'This chart requires one dimension' })
+      return
+    }
+
+    if (queryResponse.fields.measures.length < 1) {
+      this.addError({ title: 'No Metrics', message: 'This chart requires at least one metric' })
       return
     }
 
@@ -63,8 +68,11 @@ looker.plugins.visualizations.add({
     console.log(data)
     console.log(queryResponse)
 
+    const dimension = queryResponse.fields.dimensions[0].name
+    const metrics = queryResponse.fields.measures.map((m) => m.name)
+
     // Let's see if this works?
-    ReactDOM.render(<Bar data={data} dimension="" metrics={[]} />, element)
+    ReactDOM.render(<Bar data={data} dimension={dimension} metrics={metrics} />, element)
 
     // const firstRow = data[0]
     // const firstCell = firstRow[queryResponse.fields.dimensions[0].name]

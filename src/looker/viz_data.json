@@ -1,0 +1,61 @@
+[
+  {
+    "app_integrity_admin.customer_id": {
+      "value": "361531"
+    },
+    "app_integrity_admin.events": {
+      "value": 1938649,
+      "rendered": "1,938,649"
+    },
+    "app_integrity_admin.app_bot": {
+      "value": 100426,
+      "rendered": "100,426"
+    },
+    "app_integrity_admin.app_nsd": {
+      "value": 99375,
+      "rendered": "99,375"
+    }
+  },
+  {
+    "app_integrity_admin.customer_id": {
+      "value": "678812"
+    },
+    "app_integrity_admin.events": {
+      "value": 411
+    },
+    "app_integrity_admin.app_bot": {
+      "value": 270
+    },
+    "app_integrity_admin.app_nsd": {
+      "value": 0
+    }
+  },
+  {
+    "app_integrity_admin.customer_id": {
+      "value": "845155"
+    },
+    "app_integrity_admin.events": {
+      "value": 12
+    },
+    "app_integrity_admin.app_bot": {
+      "value": 6
+    },
+    "app_integrity_admin.app_nsd": {
+      "value": 3
+    }
+  },
+  {
+    "app_integrity_admin.customer_id": {
+      "value": "561854"
+    },
+    "app_integrity_admin.events": {
+      "value": 5
+    },
+    "app_integrity_admin.app_bot": {
+      "value": 2
+    },
+    "app_integrity_admin.app_nsd": {
+      "value": 2
+    }
+  }
+]
