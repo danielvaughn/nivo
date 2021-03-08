@@ -71,6 +71,10 @@ looker.plugins.visualizations.add({
     const dimension = queryResponse.fields.dimensions[0].name
     const metrics = queryResponse.fields.measures.map((m) => m.name)
 
+    console.log('DIMENSIONS')
+    console.log(dimensions)
+    console.log(metrics)
+
     // Let's see if this works?
     ReactDOM.render(<Bar data={data} dimension={dimension} metrics={metrics} />, element)
 
